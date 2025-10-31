@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Laravel\Fortify\Features;
 use Livewire\Volt\Volt;
 use App\Livewire\ProductCrud;
+use App\Livewire\StudentCrud;
 
 Route::get('/', function () {
     return view('welcome');
@@ -16,6 +17,7 @@ Route::view('dashboard', 'dashboard')
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
     Route::get('/products', ProductCrud::class)->name('products.index');
+    Route::get('/students', StudentCrud::class)->name('students');
 
     Volt::route('settings/profile', 'settings.profile')->name('profile.edit');
     Volt::route('settings/password', 'settings.password')->name('user-password.edit');
