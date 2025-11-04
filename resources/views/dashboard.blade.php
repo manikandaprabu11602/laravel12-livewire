@@ -216,7 +216,10 @@
             </svg> Try CoreUI PRO</a></li>
       </ul>
       <div class="sidebar-footer border-top d-none d-md-flex">     
-        <button class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+        <form method="POST" action="{{ route('logout') }}">
+          @csrf
+          <button type="submit" class="sidebar-toggler" type="button" data-coreui-toggle="unfoldable"></button>
+        </form>
       </div>
     </div>
     <div class="wrapper d-flex flex-column min-vh-100">
