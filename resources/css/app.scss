@@ -1,0 +1,21 @@
+// --------------------------------------------------------
+// CoreUI SCSS setup for Laravel + Vite
+// --------------------------------------------------------
+
+// 1️⃣ Import the main CoreUI SCSS (this gives you all CoreUI styles)
+@import "~@coreui/coreui/scss/coreui";
+
+// 2️⃣ (Optional) Import Bootstrap utilities if you want to extend them
+// CoreUI already includes Bootstrap, so this is usually not required.
+// @import "~bootstrap/scss/bootstrap";
+
+// 3️⃣ Add your custom overrides or extra CSS below
+body {
+  background-color: #f8f9fa; // light gray background
+}
+
+// Example: style for admin title
+h1 {
+  color: #333;
+  font-weight: 600;
+}
