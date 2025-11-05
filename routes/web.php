@@ -16,7 +16,10 @@ Route::view('dashboard', 'dashboard')
 
 Route::middleware(['auth'])->group(function () {
     Route::redirect('settings', 'settings/profile');
-    Route::get('/products', ProductCrud::class)->name('products.index');
+    Route::get('/products', function() { return view('products.index'); })->name('products.index');
+    Route::get('/products/create', function () { return view('products.create'); })->name('products.create');
+    Route::get('/products/{id}/edit', function ($id) { return view('products.edit', ['id' => $id]); })->name('products.edit');
+
     Route::get('/students', StudentCrud::class)->name('students');
 
     Volt::route('settings/profile', 'settings.profile')->name('profile.edit');
