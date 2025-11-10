@@ -5,10 +5,19 @@ use Laravel\Fortify\Features;
 use Livewire\Volt\Volt;
 use App\Livewire\ProductCrud;
 use App\Livewire\StudentCrud;
+use App\Http\Controllers\StripeController;
 
 Route::get('/', function () {
     return view('welcome');
 })->name('home');
+
+// Public shop page
+Route::get('/shop', function () {
+    $products = App\Models\Product::all();
+    return view('shop.index', compact('products'));
+})->name('shop');
+
+Route::post('/stripe/checkout', [StripeController::class, 'checkout'])->name('stripe.checkout');
 
 Route::view('dashboard', 'dashboard')
     ->middleware(['auth', 'verified'])
