@@ -28,6 +28,12 @@
                     <use xlink:href="{{ asset('node_modules/@coreui/icons/sprites/free.svg') }}#cil-basket"></use>
                 </svg> Shop</a>
         </li>
+         <li class="nav-item">
+            <a class="nav-link" href="{{ route('item') }}">
+                <svg class="nav-icon">
+                    <use xlink:href="{{ asset('node_modules/@coreui/icons/sprites/free.svg') }}#cil-basket"></use>
+                </svg> Items</a>
+        </li>
         <li class="nav-item"><a class="nav-link" href="colors.html">
                 <svg class="nav-icon">
                     <use xlink:href="{{ asset('node_modules/@coreui/icons/sprites/free.svg') }}#cil-drop"></use>

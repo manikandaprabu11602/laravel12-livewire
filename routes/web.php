@@ -17,6 +17,11 @@ Route::get('/shop', function () {
     return view('shop.index', compact('products'));
 })->name('shop');
 
+Route::get('/item', function () {
+    $products = App\Models\Product::all();
+    return view('items.index', compact('products'));
+})->name('item');
+
 Route::post('/stripe/checkout', [StripeController::class, 'checkout'])->name('stripe.checkout');
 
 Route::view('dashboard', 'dashboard')
